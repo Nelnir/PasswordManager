@@ -155,6 +155,7 @@ void PasswordManager::on_registerButton_clicked()
 
 void PasswordManager::on_addButton_clicked()
 {
+    m_controller.on_addButton_clicked();
     animateToAddPage();
 }
 
