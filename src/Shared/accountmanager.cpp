@@ -50,7 +50,7 @@ QDataStream& operator>>(QDataStream& l_stream, AccountData& l_acc)
 
 // CLASS
 
-AccountManager::AccountManager() : m_pepper()
+AccountManager::AccountManager() : m_pepper("")
 {
     qsrand(QTime::currentTime().msec());
 }
@@ -130,7 +130,9 @@ AccountData AccountManager::getAccountWithLogin(const QString &login)
 
 QByteArray AccountManager::hash(const QByteArray &l_data, const QByteArray& l_salt) const
 {
-
+    auto alg = QCryptographicHash::Sha512;
+    auto h = QCryptographicHash::hash;
+    return
 }
 
 QString AccountManager::generateSalt()

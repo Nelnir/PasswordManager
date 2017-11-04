@@ -193,6 +193,7 @@ void PasswordManager::on_logoutButton_clicked()
     m_model.m_userManager.save();
     m_model.m_userManager.unload();
     m_model.m_userManager.setUser("");
+    m_widgets.clear();
     ui->scrollArea->widget()->deleteLater();
     animateToLoginPage();
 }
@@ -588,6 +589,7 @@ void PasswordManager::on_deleteAccountButton_clicked()
         if(!m_model.m_userManager.removeUser()){
             QMessageBox::critical(this, tr("Error"), tr("Error when removing user directory"), QMessageBox::Ok);
         }
+        m_widgets.clear();
         ui->scrollArea->widget()->deleteLater();
         animateToLoginPage();
     }
